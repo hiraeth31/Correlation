@@ -51,7 +51,7 @@ axes2.set_ylabel('Ожирение (%)')
 axes2.grid()
 axes2.legend()
 
-russiaData = df[df['Entity'] == 'United States'] # Vietnam
+russiaData = df[df['Entity'] == 'Russia'] # Vietnam
 russiaData = russiaData.drop(columns=['Code', 'Entity'])
 russiaData = russiaData.rename(columns={"Indicator:Prevalence of obesity among adults, BMI &GreaterEqual; 30 (crude estimate) (%) - Sex:Both sexes": "BMI RUS"})
 russiaData = russiaData.reset_index(drop=True)
@@ -75,7 +75,7 @@ sns.heatmap(corrData, annot=True, cmap='coolwarm', fmt=".4f", vmin=-1, vmax=1)
 axes4.set_title('Корреляция')
 
 print('Значение:')
-print(hopelessData['Year'].corr(hopelessData['BMI USA']))
+print(hopelessData['BMI RUS'].corr(hopelessData['BMI USA']))
 
 plt.show()
 
